@@ -1,0 +1,111 @@
+@keyframes glow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 3px yellow;
+    }
+    50% {
+        box-shadow: 0 0 20px 10px yellow;
+    }
+}
+
+@keyframes borderGlowCards {
+    0%, 100% {
+        box-shadow: 0 0 8px 1px rgba(86, 208, 161, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 12px 2px rgba(86, 208, 161, 0.4);
+    }
+}
+
+@keyframes scaleAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rain {
+    from {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section-content.in-viewport,
+.skill-card.in-viewport,
+.contact-method.in-viewport {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Add animation delay for staggered effect */
+.about-section-content:nth-child(1).in-viewport,
+.skill-card:nth-child(1).in-viewport,
+.contact-method:nth-child(1).in-viewport { animation-delay: 0.1s; }
+
+.about-section-content:nth-child(2).in-viewport,
+.skill-card:nth-child(2).in-viewport,
+.contact-method:nth-child(2).in-viewport { animation-delay: 0.2s; }
+
+.about-section-content:nth-child(3).in-viewport,
+.skill-card:nth-child(3).in-viewport,
+.contact-method:nth-child(3).in-viewport { animation-delay: 0.3s; }
+
+
+

@@ -1,0 +1,86 @@
+.section-nav {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.section-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.indicator-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(117, 190, 132, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.indicator-dot:hover::before,
+.indicator-dot.active::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.indicator-dot.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.indicator-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.indicator-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .section-nav {
+        display: none;
+        right: 1rem;
+    }
+    
+    .indicator-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicator-dot::before {
+        width: 20px;
+        height: 20px;
+    }
+}
